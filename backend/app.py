@@ -1,16 +1,15 @@
-from flask import Flask, jsonify
+from flask import Flask
 from dotenv import load_dotenv
 from config import LocalDevelopmentConfig
 from extensions import db, security
 from models import User, Role
 from flask_security import SQLAlchemyUserDatastore
+from resources import auth_bp
 
 def create_app():
     app = Flask(__name__)
-
     # Load environment variables (if any)
     load_dotenv()
-
     # Config setup
     app.config.from_object(LocalDevelopmentConfig)
 
@@ -22,6 +21,9 @@ def create_app():
     security.init_app(app, datastore=datastore)
 
     app.datastore = datastore
+    
+    # blueprint
+    app.register_blueprint(auth_bp)
 
     # Create tables
     with app.app_context():

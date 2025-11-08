@@ -1,0 +1,1 @@
+from resources.auth_resource import auth_bp
