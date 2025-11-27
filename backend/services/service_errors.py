@@ -1,3 +1,4 @@
 
+
 class ServiceError(Exception):
-  'Base errors for service'
+    "base errors for service"
