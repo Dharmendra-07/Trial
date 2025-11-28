@@ -18,7 +18,7 @@ const router = createRouter({
     },
     {
       path: "/orders",
-      component: () => import("@/pages/customer/MyOrdersPage.vue"),
+      component: () => import("../pages/customer/MyOrderPage.vue"),
     },
     {
       path: "/manager/sections",
@@ -28,7 +28,7 @@ const router = createRouter({
     {
       path: "/manager/products",
       name: "ManagerProducts",
-      component: () => import("@/pages/manager/ProductsManagerPage.vue"),
+      component: () => import("../pages/manager/ProductsManagerPage.vue"),
     },
   ],
 });
